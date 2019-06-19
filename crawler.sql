@@ -112,9 +112,6 @@ AS SELECT m1.id_company,m3.id_company_product,m2.id_product,m4.id_hosting,m5.id_
 FROM public.dt_hosting as m4 JOIN public.dt_company_product AS m3 on m4.id_company_product = m3.id_company_product JOIN public.dt_product as m2 on m3.id_product = m2.id_product JOIN public.dt_company as m1 on m3.id_company = m1.id_company JOIN public.dt_additional_features as m5 on m3.id_company_product = m5.id_company_product;
 
 
--- CREATE VIEW v_product_vm_test (id_company,id_company_product,id_product,id_vm,id_additional_features,nm_company,url_company,nm_company_product,nm_product,currency_used,spec_vCPU,spec_clock,spec_RAM,spec_OS,spec_Storage_Volume,spec_SSD_Volume,spec_Snapshot_Volume,spec_Template_Volume,spec_ISO_Volume,spec_Public_IP,spec_Backup_Storage,spec_features,spec_features_price,spec_price,date_time)
--- AS SELECT m4.id_company, m3.id_company_product,m5.id_additional_features, m2.id_product, m1.id_vm, m4.nm_company, m4.url_company, m3.nm_company_product, m2.nm_product, m4.currency_used, m1.spec_price, m1.spec_vCPU, m1.spec_clock,m1.spec_RAM, m1.spec_OS, m1.spec_Storage_Volume, m1.spec_SSD_Volume, m1.spec_Snapshot_Volume, m1.spec_Template_Volume, m1.spec_ISO_Volume, m1.spec_Public_IP, m1.spec_Backup_Storage,m5.spec_features,m5.spec_features_price,m1.date_time
--- FROM public.dt_vm AS m1 JOIN public.dt_company_product as m3 ON m1.id_company_product = m3.id_company_product JOIN public.dt_product as m2 on m3.id_product = m2.id_product JOIN public.dt_company as m4 on m3.id_company = m4.id_company JOIN public.dt_additional_features as m5 on m5.id_company_product = m3.id_company_product;
 
 INSERT INTO dt_product(id_product, nm_product, nm_databaseRef) VALUES
 (402140280385142785, 'vm', 'dt_vm'),
@@ -122,3 +119,8 @@ INSERT INTO dt_product(id_product, nm_product, nm_databaseRef) VALUES
 
 INSERT INTO dt_worker(id_worker, loc_schedule_config, loc_config) VALUES
 (402140815780249601, 'test_worker_schedule', 'test_worker_config');
+
+
+-- CREATE VIEW v_product_vm_test (id_company,id_company_product,id_product,id_vm,id_additional_features,nm_company,url_company,nm_company_product,nm_product,currency_used,spec_vCPU,spec_clock,spec_RAM,spec_OS,spec_Storage_Volume,spec_SSD_Volume,spec_Snapshot_Volume,spec_Template_Volume,spec_ISO_Volume,spec_Public_IP,spec_Backup_Storage,spec_features,spec_features_price,spec_price,date_time)
+-- AS SELECT m4.id_company, m3.id_company_product,m5.id_additional_features, m2.id_product, m1.id_vm, m4.nm_company, m4.url_company, m3.nm_company_product, m2.nm_product, m4.currency_used, m1.spec_price, m1.spec_vCPU, m1.spec_clock,m1.spec_RAM, m1.spec_OS, m1.spec_Storage_Volume, m1.spec_SSD_Volume, m1.spec_Snapshot_Volume, m1.spec_Template_Volume, m1.spec_ISO_Volume, m1.spec_Public_IP, m1.spec_Backup_Storage,m5.spec_features,m5.spec_features_price,m1.date_time
+-- FROM public.dt_vm AS m1 JOIN public.dt_company_product as m3 ON m1.id_company_product = m3.id_company_product JOIN public.dt_product as m2 on m3.id_product = m2.id_product JOIN public.dt_company as m4 on m3.id_company = m4.id_company JOIN public.dt_additional_features as m5 on m5.id_company_product = m3.id_company_product;
