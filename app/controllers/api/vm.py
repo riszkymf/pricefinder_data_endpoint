@@ -97,11 +97,11 @@ class VMDetails(Resource):
                 for a in tags:
                     if tags[a] is not None:
                         fields = a
-            column = model.get_columns("v_product_vm_test")
+            column = model.get_columns("v_product_vm")
             try:
                 result = list()
                 if fields is None:
-                    query = """select * from v_product_vm_test"""
+                    query = """select * from v_product_vm"""
                     db.execute(query)
                     rows = db.fetchall()
                     for row in rows:
@@ -120,22 +120,32 @@ class VMDetails(Resource):
             else:
                 for i in result :
                     data = {
-                    "id_vm": str(i['id_vm']),
+                    "id_company": str(i['id_company']),
                     "id_company_product": str(i['id_company_product']),
-                    "spec_vcpu": i['spec_vcpu'],
+                    "id_product": str(i['id_product']),
+                    'id_vm': str(i['id_vm']),
+                    "id_additional_features": str(i['id_additional_features']),
+                    "nm_company": i['nm_company'],
+                    "url_company": i['url_company'],
+                    'nm_company_product': i['nm_company_product'],
+                    "nm_product": i['nm_product'],
+                    "currency_used": i['currency_used'],
                     'spec_clock': i['spec_clock'],
                     "spec_ram": i['spec_ram'],
                     "spec_os": i['spec_os'],
-                    "spec_storage_volume": i['spec_storage_volume'],
-                    'spec_ssd_volume': i['spec_ssd_volume'],
+                    'spec_storage_volume': i['spec_storage_volume'],
+                    "spec_ssd_volume": i['spec_ssd_volume'],
                     "spec_snapshot_volume": i['spec_snapshot_volume'],
                     "spec_template_volume": i['spec_template_volume'],
                     'spec_iso_volume': i['spec_iso_volume'],
                     "spec_public_ip": i['spec_public_ip'],
                     "spec_backup_storage": i['spec_backup_storage'],
+                    'spec_features': i['spec_features'],
+                    "spec_features_value": i['spec_features_value'],
+                    "spec_features_price": i['spec_features_price'],
                     'spec_price': i['spec_price'],
-                    "spec_notes": i['spec_notes'],
                     "date_time": i['date_time']
+
                     }
                     obj_userdata.append(data)
                 respons = {

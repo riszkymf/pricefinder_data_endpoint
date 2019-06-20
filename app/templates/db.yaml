@@ -391,3 +391,20 @@ endpoint:
         id_hosting:
           name: fields_name
           default: func:get_tag
+    where:
+      tags:
+        id_hosting:
+          name: fields_name
+          default: 
+        date_time:
+          name: fields_name
+          default: 
+        id_company_product:
+          name: fields_name
+          default:
+    view:
+      tags:
+        id_hosting:
+          name: fields_name
+          default: 
+        
