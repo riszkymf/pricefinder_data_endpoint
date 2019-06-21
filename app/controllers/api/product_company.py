@@ -87,7 +87,6 @@ class CompanyProducts(Resource):
                     if tags[a] is not None:
                         fields = a
             try:
-                print(tags)
                 result = model.get_by_id(table,fields,tags[fields])
             except Exception as e:
                 respons = {
