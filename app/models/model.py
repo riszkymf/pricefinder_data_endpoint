@@ -29,6 +29,7 @@ def get_by_id(table, field= None, value= None):
     column = get_columns(table)
     results = list()
     try:
+        query = "SELECT * FROM "+table+" WHERE "+field+"="+value
         db.execute("SELECT * FROM "+table+" WHERE "+field+"=%s",(value,))
         rows = db.fetchall()
         for row in rows:

@@ -191,7 +191,7 @@ class VMDetails(Resource):
                     "spec_backup_storage": i['spec_backup_storage'],
                     'spec_price': i['spec_price'],
                     "spec_notes": i['spec_notes'],
-                    "date": i['date']
+                    "date_time": i['date_time']
                     }
                     obj_userdata.append(data)
                 respons = {

@@ -151,7 +151,6 @@ class HostingDetails(Resource):
                     rows = db.fetchall()
                     for row in rows:
                         result.append(dict(zip(column, row)))
-                    print(result)
             except Exception as e:
                 respons = {
                     "status": False,
