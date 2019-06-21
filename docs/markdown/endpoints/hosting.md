@@ -7,7 +7,7 @@ Hosting endpoint is used to store and view Hosting data specification
 - response: application/json
 - body: no
 - roles: user
-- usage: Get all available record data
+- usage: Get all available hosting data
 
 ### Hosting ADD
 - path: /api/hosting
@@ -16,7 +16,7 @@ Hosting endpoint is used to store and view Hosting data specification
 - body: raw
 - roles: user
 - relation: 
-- usage: Add new vm data for an company product
+- usage: Add new hosting data for an company product
 
 raw:
 ```
@@ -40,7 +40,7 @@ raw:
 }
 ```
 
-### VM WHERE
+### Hosting WHERE
 
 - path: /api/hosting
 - method: post
@@ -72,33 +72,33 @@ raw:
 ```
 
 
-### RECORD REMOVE
+### Hosting REMOVE
 - path: /api/hosting
 - method: post
 - response: application/json
 - body: raw
 - roles: user
-- usage: remove vm data
+- usage: remove hosting data
 
 raw:
 ```
 {
    "remove": {
       "tags": {
-      	"id_hosting": vm::id_hosting
+      	"id_hosting": hosting::id_hosting
       }
       	
    }
 }
 ```
 
-### RECORD VIEW
+### HOSTING VIEW
 - path: /api/hosting
 - method: post
 - response: application/json
 - body: raw
 - roles: user
-- usage: View record and its related data
+- usage: View hosting and its related data
 
 raw:
 ```
@@ -112,7 +112,7 @@ raw:
 }
 ```
 tags:
-- id_record: id of record data that will be removed
+- id_hosting: id of hosting data that will be removed
 
 To see all related data, the following json in body
 
