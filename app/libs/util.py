@@ -69,6 +69,11 @@ def get_command(req):
 
 def get_tag():
     id_ = hashlib.md5(str(timeset()).encode('utf-8')).hexdigest()
-    print(id_)
-    print("DAT ID")
     return id_
+
+def field_cleanup(data):
+    d = {}
+    for key,val in data.items():
+        if val:
+            d[key] = val
+    return d
