@@ -121,22 +121,36 @@ endpoint:
         id_company_product:
           name: primary key
           type: int
+          default:
       fields:
         id_company_product:
           name: primary key
           type: int
+          default:
         id_product:
           name: foreign key
           type: int
+          default:
         id_company:
           name: foreign key
           type: int
+          default:
         nm_product:
           name: product name
           type: str
+          default:
         id_worker:
           name: worker reference
           type: int
+          default:
+        status_page:
+          name: data
+          type: field
+          default:
+        status_scraper:
+          name: data
+          type: field
+          default:
   dt_vm:
     insert:
       fields:

@@ -56,16 +56,17 @@ def insert(table, data = None):
         id_of_new_row = db.fetchone()[0]
         return str(id_of_new_row)
 
-def update(table, data = None):
+def update(table, tags, data = None):
     value = ''
-    rows = data['data']
-    for row in rows:
-        value += row+"='"+str(rows[row]+"',")
-    set = value[:-1]
-    field = list(data['where'].keys())[0]
+    field = list()
+    for key,value in data.items():
+        field.append("{} = '{}'".format(key,value))
+    field = ",".join(field)
+    tags_key = list(tags.keys())
+    tags_value = list(tags.values())
     status = None
     try:
-        db.execute("UPDATE "+table+" SET "+set+" WHERE "+field+"="+data['where'][field]+"")
+        db.execute("UPDATE "+table+" SET "+field+" WHERE "+tags_key[0]+"="+tags_value[0]+"")
         status = True
     except (Exception, psycopg2.DatabaseError) as e:
         status = e

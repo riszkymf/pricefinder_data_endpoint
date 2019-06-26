@@ -23,12 +23,14 @@ CREATE TABLE dt_company_product(
     id_company INT NULL,
     id_worker INT NULL,
     nm_company_product STRING(200) NULL,
+    status_page STRING(200) NULL,
+    status_scraper STRING(200) NULL,
     CONSTRAINT "primary" PRIMARY KEY (id_company_product ASC),
     UNIQUE INDEX company_product_company_product_name_key(nm_company_product ASC),
     INDEX product_auto_index_fk_id_product_ref_product (id_product ASC),
     INDEX company_auto_index_fk_id_company_ref_company (id_company ASC),
     INDEX worker_auto_index_fk_id_worker_ref_worker (id_worker ASC),
-    FAMILY "primary" (id_company_product, id_product, id_company, id_worker)
+    FAMILY "primary" (id_company_product, id_product, id_company, id_worker,status_page,status_scraper)
 );
 
 CREATE TABLE dt_worker(
