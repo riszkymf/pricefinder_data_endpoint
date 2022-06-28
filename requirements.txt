@@ -1,5 +1,5 @@
 aniso8601==6.0.0
-arrow==0.14.0
+arrow==0.15.1
 certifi==2019.3.9
 chardet==3.0.4
 Click==7.0
